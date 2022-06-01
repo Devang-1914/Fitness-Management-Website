@@ -1,0 +1,20 @@
+{% extends "login_base.html" %}
+{% block content %}
+
+<div class="box">
+    <h1 style="font-size:60px;">Login</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form method="post">
+        <input type="text" name="email" placeholder="Email" required="required"/>
+        <input type="password" name="password" placeholder="Password" required="required"/>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Let's Get Fit.</button>
+    </form>
+</div>
+
+{% endblock %}

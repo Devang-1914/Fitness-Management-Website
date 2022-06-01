@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Selection </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slelection_style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!--<link rel="stylesheet" href="static/css/style.css">-->
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Healthy<span>Fi</span></div>
+            <div class="open"><i class="fas fa-bars"></i></div>
+            <ul class="links">
+
+                <li><a href="{{ url_for('logout') }}" class="active">Logout</a></li>
+                <div class="close"><i class="fas fa-times"></i></div>
+            </ul>
+        </nav>
+    <section id="facilities">
+        <div class="container">
+            <div class="title">
+                <h1 style="font-size:90px;" >Welcome </h1>
+                <h1 style="font-size:90px;" > {{user.user_name}}</h1>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <h3 style="font-size:40px;">Select the below services 💪 </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="https://media.istockphoto.com/photos/simple-adult-teenager-male-person-with-a-roll-tape-measure-the-height-picture-id1307119970?b=1&k=20&m=1307119970&s=170667a&w=0&h=DJ1gnARBjlmh2PwxIHFpxvkfK4OGIYMfHqCvdZ6Duac=" class="card-logo img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Update Profile</h5>
+                            <p class="card-text">{{user.user_name}} select your trainer and update your profile to keep track of your height and weight </p>
+                            <a href="{{ url_for('get_data', u_id=user.user_id) }}">Update</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="https://media.istockphoto.com/photos/healthy-lifestyle-exercise-schedule-picture-id154961329?b=1&k=20&m=154961329&s=170667a&w=0&h=Nq1oHEWoe9pNvXeBPiuFxKD32Cu-ZNxaBXob-ffyFHM=" class="card-logo img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Programs</h5>
+                            <p class="card-text">There are various programs targeting core and upper body, lower body and yoga </p>
+                            <a href="{{ url_for('program', u_id=user.user_id)}}">Select Programs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="https://media.istockphoto.com/photos/male-hand-pressing-subscription-button-with-the-word-subscribe-on-picture-id1264256508?k=20&m=1264256508&s=612x612&w=0&h=09GTgSMR0V3FRmS3XP6KyAGmLc4RZ-y9h6WVLgncx6Y=" class="card-logo img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Subscribe</h5>
+                            <p class="card-text">The subscription service gets you update on your profile and provide newsletter services </p>
+                            <a href="{{ url_for('subscription', u_id=user.user_id )}}">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
