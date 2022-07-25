@@ -14,7 +14,7 @@ import smtplib
 
 # ------------------------------------ START CONNECTION AND VARIABLES MANAGEMENT ------------------------#
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = 'ENTER YOUR SECRET_KEY'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///HealthFitness.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 Bootstrap(app)
@@ -28,8 +28,8 @@ login_manager.init_app(app)
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-OUR_EMAIL = "health123fi@gmail.com"
-EMAIL_PASSWORD = "HEALTH123FI"
+OUR_EMAIL = "EMAIL_ID"
+EMAIL_PASSWORD = "EMAIL_PASSWORD"
 
 # ------------------------------------- DATABASE MANAGEMENT ------------------------------------#
 class Trainer(db.Model):
